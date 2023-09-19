@@ -1,0 +1,9 @@
+{{#imports}}import type { {{name}} } from '{{{path}}}';
+{{/imports}}
+{{#hasImports}}
+
+{{/hasImports}}export interface {{name}} {
+  {{#properties}}
+  {{name}}{{#isNullable}}?{{/isNullable}}: {{type}};
+  {{/properties}}
+}

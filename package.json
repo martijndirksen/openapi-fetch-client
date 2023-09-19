@@ -1,0 +1,40 @@
+{
+  "name": "openapi-fetch-client",
+  "version": "1.0.0",
+  "description": "Create a RESTful Fetch client based on an OpenAPI specification",
+  "homepage": "https://github.com/martijndirksen/openapi-fetch-client#readme",
+  "bugs": {
+    "url": "https://github.com/martijndirksen/openapi-fetch-client/issues",
+    "email": "martijn.dirksen@proton.me"
+  },
+  "author": "Martijn Dirksen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martijndirksen/openapi-fetch-client.git"
+  },
+  "scripts": {
+    "start": "ts-node --esm src/index.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "OpenAPI",
+    "REST",
+    "Swagger",
+    "Fetch",
+    "TypeScript",
+    "Client"
+  ],
+  "devDependencies": {
+    "@types/mustache": "^4.2.2",
+    "eslint": "^8.40.0",
+    "mustache": "^4.2.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "vitest": "^0.13.0"
+  },
+  "type": "module"
+}
