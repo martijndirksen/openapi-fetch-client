@@ -1,6 +1,7 @@
 import { logBox } from './util/logging.js';
 import { parseCliArguments } from './util/cli.js';
 import { OpenApiParser } from './openapi/index.js';
+import { createAst } from './ast/index.js';
 
 logBox('openapi-fetch-client');
 
@@ -8,7 +9,9 @@ const args = parseCliArguments(process.argv);
 
 const parser = new OpenApiParser(args.source);
 
-parser.parse();
+const parsed = await parser.parse();
+
+createAst(parsed);
 
 /*
 const specification = await readFile('./openapi.json', 'utf-8');

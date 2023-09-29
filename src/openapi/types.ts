@@ -8,6 +8,7 @@ export interface OpenApiSpecification {
     [path: string]: {
       [method: string]: {
         operationId: string;
+        tags: string[];
         responses: {
           [statusCode: string]: {
             description: string;
