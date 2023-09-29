@@ -1,4 +1,4 @@
-# fetch-openapi-client
+# openapi-fetch-client
 
 The basic principle behind the serialization/deserialization is that we assume the contract (i.e. the OpenAPI specification) is correct and we generate the code based on that. This means that we do not need to validate the contract at runtime. This saves us a lot of code and makes the code easier to read and understand.
 

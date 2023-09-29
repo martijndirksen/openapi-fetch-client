@@ -1,4 +1,4 @@
-export interface IOpenApiSpecification {
+export interface OpenApiSpecification {
   openapi: string;
   paths: {
     [path: string]: {
@@ -31,9 +31,9 @@ export interface IOpenApiSpecification {
   };
 }
 
-export type OpenApiSchema = IOpenApiEnumSchema | IOpenApiObjectSchema;
+export type OpenApiSchema = OpenApiEnumSchema | OpenApiObjectSchema;
 
-export interface IOpenApiObjectSchema {
+export interface OpenApiObjectSchema {
   type: 'object';
   discriminator?: {
     propertyName: string;
@@ -49,17 +49,17 @@ export interface IOpenApiObjectSchema {
 export type OpenApiPrimitive = 'boolean' | 'number' | 'integer' | 'string';
 
 export type OpenApiProperty =
-  | IOpenApiPrimitiveProperty
-  | IOpenApiArrayProperty
-  | IOpenApiObjectProperty
-  | IOpenApiEnumProperty;
+  | OpenApiPrimitiveProperty
+  | OpenApiArrayProperty
+  | OpenApiObjectProperty
+  | OpenApiEnumProperty;
 
-export interface IOpenApiPrimitiveProperty {
+export interface OpenApiPrimitiveProperty {
   type: OpenApiPrimitive;
   nullable?: boolean;
 }
 
-export interface IOpenApiArrayProperty {
+export interface OpenApiArrayProperty {
   type: 'array';
   items: {
     type: OpenApiPrimitive;
@@ -68,14 +68,14 @@ export interface IOpenApiArrayProperty {
   nullable?: boolean;
 }
 
-export interface IOpenApiObjectProperty {
+export interface OpenApiObjectProperty {
   allOf: {
     $ref: string;
   }[];
   nullable?: boolean;
 }
 
-export interface IOpenApiEnumProperty {
+export interface OpenApiEnumProperty {
   allOf: [
     {
       $ref: string;
@@ -85,7 +85,7 @@ export interface IOpenApiEnumProperty {
   nullable?: boolean;
 }
 
-export interface IOpenApiEnumSchema {
+export interface OpenApiEnumSchema {
   type: 'integer';
   enum: number[];
   'x-enumNames': string[];

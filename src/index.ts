@@ -1,15 +1,15 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import mustache from 'mustache';
-import { rimraf } from 'rimraf';
-import type {
-  OpenApiSchema,
-  IOpenApiSpecification,
-  IOpenApiEnumSchema,
-  IOpenApiObjectSchema,
-  OpenApiPrimitive,
-  OpenApiProperty,
-} from './types.js';
+import { OpenApiParser } from './openapi/index.js';
+import { ExternalOpenApiSource } from './openapi/sources/external-api-source.js';
 
+const source = new ExternalOpenApiSource(
+  'https://api.maxaro.nl/swagger/v1/swagger.json'
+);
+
+const parser = new OpenApiParser(source);
+
+parser.parse();
+
+/*
 const specification = await readFile('./openapi.json', 'utf-8');
 const enumTemplate = await readFile('./src/templates/enum.mustache', 'utf-8');
 const interfaceTemplate = await readFile(
@@ -162,3 +162,4 @@ function determineExtension(moduleResolution: string) {
       return '';
   }
 }
+*/

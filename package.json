@@ -1,7 +1,7 @@
 {
   "name": "openapi-fetch-client",
   "version": "1.0.0",
-  "description": "Create a RESTful Fetch client based on an OpenAPI specification",
+  "description": "Create a lightweight TypeScript client based on an OpenAPI specification",
   "homepage": "https://github.com/martijndirksen/openapi-fetch-client#readme",
   "bugs": {
     "url": "https://github.com/martijndirksen/openapi-fetch-client/issues",
@@ -27,14 +27,18 @@
     "Client"
   ],
   "devDependencies": {
-    "@types/mustache": "^4.2.2",
-    "eslint": "^8.40.0",
+    "@types/mustache": "^4.2.3",
+    "@types/node": "^18.18.0",
+    "eslint": "^8.50.0",
     "mustache": "^4.2.0",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
-    "vitest": "^0.13.0"
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }

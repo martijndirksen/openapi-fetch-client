@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src/index.ts", "tests/**/*"],
   "compilerOptions": {
+    "baseUrl": "./",
     "lib": ["es2021"],
     "module": "nodenext",
     "target": "es2021",
@@ -10,7 +11,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "watchOptions": {
     "excludeDirectories": ["**/node_modules", "dist/*"]
