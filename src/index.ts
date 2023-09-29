@@ -1,7 +1,7 @@
 import { logBox } from './util/logging.js';
 import { parseCliArguments } from './util/cli.js';
 import { OpenApiParser } from './openapi/index.js';
-import { createAst } from './ast/index.js';
+import { createAst } from './openapi/ast/index.js';
 
 logBox('openapi-fetch-client');
 

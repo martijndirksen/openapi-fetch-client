@@ -1,20 +1,7 @@
-import type { OpenApiSpecification } from '../openapi/types.js';
-import { logError } from '../util/logging.js';
-
-export interface AstClient {
-  name: string;
-  operations: AstClientOperation[];
-}
-
-type HttpMethod =
-  | 'GET'
-  | 'HEAD'
-  | 'POST'
-  | 'PUT'
-  | 'DELETE'
-  | 'CONNECT'
-  | 'OPTIONS'
-  | 'TRACE';
+import type { OpenApiSpecification } from '../types.js';
+import { logError } from '../../util/logging.js';
+import type { HttpMethod } from './http-method.js';
+import { AstClient } from './ast-client.js';
 
 const httpMethods: Readonly<HttpMethod[]> = [
   'GET',
@@ -26,15 +13,6 @@ const httpMethods: Readonly<HttpMethod[]> = [
   'OPTIONS',
   'TRACE',
 ];
-
-export interface AstClientOperation {
-  name: string;
-  method: HttpMethod;
-}
-
-export interface AstSpecification {
-  clients: AstClient[];
-}
 
 export function createAst(specification: OpenApiSpecification) {
   const taggedClients = new Map<string, AstClient>();
