@@ -1,15 +1,16 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import mustache from 'mustache';
-import { rimraf } from 'rimraf';
-import type {
-  OpenApiSchema,
-  IOpenApiSpecification,
-  IOpenApiEnumSchema,
-  IOpenApiObjectSchema,
-  OpenApiPrimitive,
-  OpenApiProperty,
-} from './types.js';
+import { logBox } from './util/logging.js';
+import { parseCliArguments } from './util/cli.js';
+import { OpenApiParser } from './openapi/index.js';
 
+logBox('openapi-fetch-client');
+
+const args = parseCliArguments(process.argv);
+
+const parser = new OpenApiParser(args.source);
+
+parser.parse();
+
+/*
 const specification = await readFile('./openapi.json', 'utf-8');
 const enumTemplate = await readFile('./src/templates/enum.mustache', 'utf-8');
 const interfaceTemplate = await readFile(
@@ -162,3 +163,4 @@ function determineExtension(moduleResolution: string) {
       return '';
   }
 }
+*/
